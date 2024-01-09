@@ -2,8 +2,12 @@ import Image from "next/image";
 import React from "react";
 import NoOrder from "../components/NoOrder";
 import Img from "../assets/image/Img.png";
-// import { BarPlot, ChartsXAxis, ResponsiveChartContainer } from "@mui/x-charts";
-const Storedata = ({ getorderdata }) => {
+import { formatISOStringToDMY } from "../utils/Useful";
+import { ChartsXAxis, ChartsYAxis, LineChart, LinePlot, ResponsiveChartContainer } from "@mui/x-charts";
+
+const Storedata = ({ getorderdata, sales }) => {
+
+  console.log(sales, "sales")
   return (
     <div className={`flex flex-col gap-4`}>
       <div className="bg-white rounded-xl p-2 px-3">
@@ -21,41 +25,33 @@ const Storedata = ({ getorderdata }) => {
           </div>
         </div>
         <div className="w-full">
-          {/* {analyticsdata?.find?.stats.map((l, e) => {
-			if (l?.type == "store") {
-			  return (
-				<ResponsiveChartContainer
-				  key={e}
-				  series={[
-					{
-					  type: "bar",
-					  data: l?.Y1,
-					},
-					{
-					  type: "bar",
-					  data: l?.Y2,
-					},
-				  ]}
-				  xAxis={[
-					{
-					  data: l?.X,
-					  scaleType: "band",
-					  id: "x-axis-id",
-					},
-				  ]}
-				  height={200}
-				>
-				  <BarPlot />
 
-				  <ChartsXAxis
-					label="X axis"
-					position="bottom"
-					axisId="x-axis-id"
-				  />
-				</ResponsiveChartContainer>
-			  );
-			}
-		  })} */}
+          <ResponsiveChartContainer
+            dataset={sales}
+            series={[
+              {
+                type: "line",
+                dataKey: "Y",
+              },
+            ]}
+            xAxis={[
+              {
+                dataKey: "X",
+                scaleType: "band",
+                id: "x-axis-id",
+                categoryGapRatio: 0.4,
+              },
+            ]}
+            height={200}
+            className="z-10 w-full"
+          >
+            <LinePlot />
+            <ChartsXAxis
+              label="X axis"
+              position="bottom"
+              axisId="x-axis-id"
+            />
+          </ResponsiveChartContainer>
         </div>
       </div>
 

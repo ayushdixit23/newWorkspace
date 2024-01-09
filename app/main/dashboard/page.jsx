@@ -21,7 +21,7 @@ import { useGetAnalyticsQuery } from "@/app/redux/apiroutes/community";
 import { useGetFetchOrderQuery } from "@/app/redux/apiroutes/userLoginAndSetting";
 
 function Dashboard() {
-  const [change, setChange] = useState("community");
+  const [change, setChange] = useState("store");
   const [open, setOpen] = useState(false);
   const [comchange, setComchange] = useState("0");
   const [prochange, setProchange] = useState("1");
@@ -131,7 +131,7 @@ function Dashboard() {
                 )}
               </>
             )}
-            {change == "store" && <Storedata getorderdata={getorderdata} />}
+            {change == "store" && <Storedata sales={analyticsdata?.sales} getorderdata={getorderdata} />}
           </div>
           <div className="col-span-2 mt-2 w-full h-fit sm:rounded-xl sm:bg-white p-3 ">
             <div className={`${change == "community" ? null : "hidden"}`}>
