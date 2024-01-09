@@ -7,7 +7,22 @@ import { ChartsXAxis, ChartsYAxis, LineChart, LinePlot, ResponsiveChartContainer
 
 const Storedata = ({ getorderdata, sales }) => {
 
-  console.log(sales, "sales")
+  const salesData = sales.map((d) => {
+    console.log(formatISOStringToDMY(d.X))
+    return {
+      Y: Number(d.Y),
+      X: formatISOStringToDMY(d.X)
+    }
+  })
+
+  // const salesData = [
+  //   { X: "2022-01-01", Y: 10 },
+  //   { X: "2022-01-02", Y: 20 },
+  //   { X: "2022-01-03", Y: 30 },
+  //   { X: "2022-01-04", Y: 20 },
+  //   { X: "2022-01-05", Y: 60 },
+
+  // ];
   return (
     <div className={`flex flex-col gap-4`}>
       <div className="bg-white rounded-xl p-2 px-3">
@@ -27,7 +42,7 @@ const Storedata = ({ getorderdata, sales }) => {
         <div className="w-full">
 
           <ResponsiveChartContainer
-            dataset={sales}
+            dataset={salesData}
             series={[
               {
                 type: "line",
