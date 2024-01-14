@@ -17,11 +17,9 @@ const useTokenAndData = () => {
   const dispatch = useDispatch();
   const [refreshedtokenAgain] = useGetRefreshTokenMutation();
 
-  const refreshAccessToken = async (refreshToken) => {
+  const refreshAccessToken = useCallback(async (refreshToken) => {
     try {
-      const res = await refreshedtokenAgain({
-        refresh_token: refreshToken,
-      });
+      const res = await refreshedtokenAgain({ refresh_token: refreshToken });
       const { access_token, success } = res.data;
       if (success) {
         return { access_token, refresh_token: refreshToken };
@@ -33,9 +31,10 @@ const useTokenAndData = () => {
       console.error(err);
       return Promise.reject("Failed to refresh token");
     }
-  };
+  }, [refreshedtokenAgain]);
 
-  const checkRefreshTokenValidity = () => {
+
+  const checkRefreshTokenValidity = useCallback(() => {
     try {
       const refreshToken = Cookies.get("frhktn");
       if (!refreshToken) {
@@ -51,9 +50,9 @@ const useTokenAndData = () => {
       console.error("Error checking refresh token validity:", error);
       return false;
     }
-  };
+  }, []);
 
-  const refresh = async () => {
+  const refresh = useCallback(async () => {
     const refreshToken = Cookies.get("frhktn");
     if (!refreshToken) {
       console.error("No refresh token found");
@@ -68,7 +67,7 @@ const useTokenAndData = () => {
     } catch (error) {
       console.error("Error during token refresh:", error);
     }
-  };
+  }, [refreshAccessToken]);
 
   const generateData = useCallback(
     async (qrtoken) => {
@@ -100,8 +99,6 @@ const useTokenAndData = () => {
             Cookies.remove("frhktn");
             console.log("runned 2");
             Cookies.remove("excktn");
-
-            router.push("/login");
           }
         } else {
           setIsValid(false);
@@ -110,8 +107,6 @@ const useTokenAndData = () => {
           Cookies.remove("excktn");
           console.log("runned 3");
           toast.error("Log in Session Expired");
-
-          router.push("/login");
         }
       } catch (e) {
         console.error(e);
@@ -121,19 +116,15 @@ const useTokenAndData = () => {
         Cookies.remove("excktn");
         console.log("runned 4");
         toast.error("Log in Session Expired");
-
-        router.push("/login");
       }
     },
-    [token, path]
+    [token]
   );
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
-    if (currentPath != "/login/qrcode") {
-      generateData();
-    }
-  }, [token, dispatch]);
+    generateData();
+
+  }, [token, dispatch, generateData]);
 
   return { isValid, parsedData, generateData };
 };

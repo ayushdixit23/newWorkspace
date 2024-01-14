@@ -122,11 +122,13 @@ function page() {
 
   const fetchid = async () => {
     try {
+      console.log("first")
       const en = encryptaes(number);
 
       const result = await login({
         phone: en,
       });
+      console.log(result)
       if (result.data?.success) {
         const a = await waitkrnevalafunc(result.data);
         if (a === true) {
@@ -188,7 +190,6 @@ function page() {
         window.confirmationResult = confirmationResult;
         setLoading(false);
         setShowOTP(true);
-
         toast.success("Successfully!");
       })
       .catch((error) => {
@@ -406,37 +407,35 @@ function page() {
           <>
             <div className="mx-auto max-w-md w-full  flex justify-center gap-2 p-10">
               {otp.map((value, inde) => (
-                <>
-                  <div key={inde}>
-                    <input
-                      key={`otp - field - ${inde}`}
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter") {
-                          onOTPVerify();
-                        }
-                      }}
-                      className="otp__digit otp__field md:hidden outline-slate-200 bg-slate-100 h-[50px] w-[50px] rounded-2xl flex justify-center items-center text-center text-[#3e3e3e]"
-                      value={value}
-                      onChange={(event) => handleInputChange(event, inde)}
-                      ref={otpInputRefs[inde]}
-                      maxLength="1"
-                      type="number"
-                    />
-                    <input
-                      key={`otp - field - ${inde + 1} `}
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter") {
-                          onOTPVerify();
-                        }
-                      }}
-                      className="otp__digit otp__field pn:max-md:hidden outline-slate-200 bg-slate-100 h-[50px] w-[50px] rounded-2xl flex justify-center items-center text-center text-[#3e3e3e]"
-                      value={value}
-                      onChange={(event) => handleInputChange(event, inde)}
-                      ref={otpInputRefs[inde]}
-                      maxLength="1"
-                    />
-                  </div>
-                </>
+                <div key={inde}>
+                  <input
+                    key={`otp - field - ${inde}`}
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter") {
+                        onOTPVerify();
+                      }
+                    }}
+                    className="otp__digit otp__field md:hidden outline-slate-200 bg-slate-100 h-[50px] w-[50px] rounded-2xl flex justify-center items-center text-center text-[#3e3e3e]"
+                    value={value}
+                    onChange={(event) => handleInputChange(event, inde)}
+                    ref={otpInputRefs[inde]}
+                    maxLength="1"
+                    type="number"
+                  />
+                  <input
+                    key={`otp - field - ${inde + 1} `}
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter") {
+                        onOTPVerify();
+                      }
+                    }}
+                    className="otp__digit otp__field pn:max-md:hidden outline-slate-200 bg-slate-100 h-[50px] w-[50px] rounded-2xl flex justify-center items-center text-center text-[#3e3e3e]"
+                    value={value}
+                    onChange={(event) => handleInputChange(event, inde)}
+                    ref={otpInputRefs[inde]}
+                    maxLength="1"
+                  />
+                </div>
               ))}
             </div>
           </>

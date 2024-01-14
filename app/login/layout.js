@@ -35,16 +35,15 @@ export default function loginLayout({ children }) {
             }}
           >
             {slides.map((slide, index) => (
-              <>
 
-                <div
-                  key={index}
-                  className="h-[50vh] w-full flex-col flex-shrink-0 bg-lightgray flex items-center justify-center text-black text-2xl"
-                >
-                  <div className="mb-10 font-semibold text-3xl text-center text-[#0066FF]">{slide.msg}</div>
-                  <Image priority src={slide.img} alt="hlo" />
-                </div>
-              </>
+              <div
+                key={index}
+                className="h-[50vh] w-full flex-col flex-shrink-0 bg-lightgray flex items-center justify-center text-black text-2xl"
+              >
+                <div className="mb-10 font-semibold text-3xl text-center text-[#0066FF]">{slide.msg}</div>
+                <Image priority src={slide.img} alt="hlo" />
+              </div>
+
             ))}
           </div>
 
