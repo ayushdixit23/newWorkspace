@@ -131,11 +131,11 @@ function Communitybox({ data, id, index, handleDelete }) {
           >
             <div className="w-[100%]">
               <div className={`text-sm pp:text-[16px]`}>
-                Total member
+                Topics
               </div>
               <div className="flex justify-between w-[100%] items-center">
-                <div className={`text-[29px]`}>0</div>
-                <div>+00.0%</div>
+                <div className={`text-[29px]`}>{data?.c?.topics?.length}</div>
+                {/* <div>+00.0%</div> */}
               </div>
             </div>
           </div>
@@ -147,11 +147,11 @@ function Communitybox({ data, id, index, handleDelete }) {
           >
             <div className="w-[100%]">
               <div className={`text-sm pp:text-[16px]`}>
-                Visitors
+                Total Posts
               </div>
               <div className="flex justify-between w-[100%] items-center">
-                <div className={`text-[29px]`}>0</div>
-                <div>+00.0%</div>
+                <div className={`text-[29px]`}>   {data?.c?.posts?.length}</div>
+                {/* <div>+00.0%</div> */}
               </div>
             </div>
           </div>
@@ -163,11 +163,11 @@ function Communitybox({ data, id, index, handleDelete }) {
           >
             <div className="w-[100%]">
               <div className={`text-sm pp:text-[16px]`}>
-                New member
+                Members
               </div>
               <div className="flex justify-between w-[100%] items-center">
-                <div className={`text-[29px]`}>0</div>
-                <div>+00.0%</div>
+                <div className={`text-[29px]`}>   {data?.c?.members?.length}</div>
+                {/* <div>+00.0%</div> */}
               </div>
             </div>
           </div>
@@ -179,11 +179,11 @@ function Communitybox({ data, id, index, handleDelete }) {
           >
             <div className="w-[100%]">
               <div className={`text-sm pp:text-[16px]`}>
-                Avg Posts Impression
+                Engagement Rate
               </div>
               <div className="flex justify-between w-[100%] items-center">
                 <div className={`text-[29px]`}>0</div>
-                <div>+00.0%</div>
+                {/* <div>+00.0%</div> */}
               </div>
             </div>
           </div>

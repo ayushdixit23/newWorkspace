@@ -1,7 +1,7 @@
 export const formatISOStringToDMY = (dateString) => {
   const date = new Date(dateString); // Parse the ISO string
   if (isNaN(date)) {
-    throw new Error("Invalid date string");
+    console.log("Invalid date string");
   }
 
   const day = date.getDate();
@@ -13,11 +13,11 @@ export const formatISOStringToDMY = (dateString) => {
 };
 
 export const fetchData = async (req, res) => {
-    axios
-      .post(`${API}/getprositefull`, { username: "@testaryansh" })
-      .then((res) => {
-        setNewData([res.data.prosite]);
-      })
-      .catch((E) => console.log(E));
-  };
+  axios
+    .post(`${API}/getprositefull`, { username: "@testaryansh" })
+    .then((res) => {
+      setNewData([res.data.prosite]);
+    })
+    .catch((E) => console.log(E));
+};
 

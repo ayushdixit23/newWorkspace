@@ -43,7 +43,7 @@ function Header() {
         {pathname == "/main/store" ? "Store" : null}
         {pathname == "/main/earnings" ? "Earnings" : null}
         {pathname == "/main/dashboard" && <div>Hi, {name}</div>}
-        {pathname == "/main/customiz" && <div>Hi, {name}</div>}
+        {/* {pathname == "/main/customiz" && <div>Hi, {name}</div>} */}
 
       </div>
 

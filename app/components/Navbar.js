@@ -31,11 +31,11 @@ function NavBar() {
       path: "/main/store",
       icon: <Store className="sm:h-7 sm:w-7 h-8 w-8" />,
     },
-    {
-      label: "Customization ",
-      path: "/main/customiz",
-      icon: <Edit className="sm:h-7 sm:w-7 h-8 w-8" />,
-    },
+    // {
+    //   label: "Customization ",
+    //   path: "/main/customiz",
+    //   icon: <Edit className="sm:h-7 sm:w-7 h-8 w-8" />,
+    // },
     {
       label: "Earnings",
       path: "/main/earnings",

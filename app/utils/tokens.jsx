@@ -97,7 +97,6 @@ const useTokenAndData = () => {
           } else {
             Cookies.remove("work_grip");
             Cookies.remove("frhktn");
-            console.log("runned 2");
             Cookies.remove("excktn");
           }
         } else {
@@ -105,8 +104,6 @@ const useTokenAndData = () => {
           Cookies.remove("work_grip");
           Cookies.remove("frhktn");
           Cookies.remove("excktn");
-          console.log("runned 3");
-          toast.error("Log in Session Expired");
         }
       } catch (e) {
         console.error(e);
@@ -114,8 +111,6 @@ const useTokenAndData = () => {
         Cookies.remove("work_grip");
         Cookies.remove("frhktn");
         Cookies.remove("excktn");
-        console.log("runned 4");
-        toast.error("Log in Session Expired");
       }
     },
     [token]

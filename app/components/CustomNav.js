@@ -21,13 +21,13 @@ function CustomNav() {
     },
     {
       path: "/custom/photo",
-      icon: <Research  className="sm:h-7 sm:w-7 h-8 w-8" />,
+      icon: <Research className="sm:h-7 sm:w-7 h-8 w-8" />,
     },
 
-    {
-      path: "/custom/customize",
-      icon: <Text className="sm:h-7 sm:w-7 h-8 w-8" />,
-    },
+    // {
+    //   path: "/custom/customize",
+    //   icon: <Text className="sm:h-7 sm:w-7 h-8 w-8" />,
+    // },
     {
       path: "/custom/color",
       icon: <Research2 className="sm:h-7 sm:w-7 h-8 w-8" />,
@@ -53,16 +53,14 @@ function CustomNav() {
               {navItems.map((item, index) => (
                 <li
                   key={index}
-                  className={`flex items-center gap-2 duration-150  ${
-                    path === item.path ? "" : "text-black"
-                  }`}
+                  className={`flex items-center gap-2 duration-150  ${path === item.path ? "" : "text-black"
+                    }`}
                 >
                   <div
-                    className={` duraction-100 ${
-                      path === item.path
+                    className={` duraction-100 ${path === item.path
                         ? "h-10 w-1 rounded-full bg-black"
                         : "h-0 w-0"
-                    }`}
+                      }`}
                   ></div>
                   <div>
                     <Link href={item.path} className="flex items-center">
@@ -71,9 +69,8 @@ function CustomNav() {
                       </div>
 
                       <div
-                        className={`p-4 vs:max-md:hidden  ${
-                          path === item.path ? "font-bold" : "font-medium"
-                        }`}
+                        className={`p-4 vs:max-md:hidden  ${path === item.path ? "font-bold" : "font-medium"
+                          }`}
                       ></div>
                     </Link>
                   </div>
@@ -102,16 +99,14 @@ function CustomNav() {
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className={` flex-col flex justify-center items-center duration-150  ${
-                  path === item.path ? "" : "text-black"
-                }`}
+                className={` flex-col flex justify-center items-center duration-150  ${path === item.path ? "" : "text-black"
+                  }`}
               >
                 <div
-                  className={`duraction-100 ${
-                    path === item.path
+                  className={`duraction-100 ${path === item.path
                       ? "h-1 w-10 rounded-full bg-black"
                       : "h-0 w-0"
-                  }`}
+                    }`}
                 ></div>
                 <div className="h-10 w-10 pt-2">
                   <Link

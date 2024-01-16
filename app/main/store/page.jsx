@@ -169,9 +169,9 @@ function page() {
           </div>
 
           <div className=" bg-[#FAFAFA] p-3 w-full  grid grid-cols-1">
-            <div className="pt-4 rounded-2xl grid grid-cols-1 w-full">
+            <div className="rounded-2xl grid grid-cols-1 w-full">
               {/* web */}
-              <div className="flex pn:max-sm:hidden justify-center bg-[#FAFAFA] p-3 w-full items-center gap-2 md:gap-5">
+              {/* <div className="flex pn:max-sm:hidden justify-center bg-[#FAFAFA] p-3 w-full items-center gap-2 md:gap-5">
                 <div className="flex sm:max-md:text-xs flex-col p-3 py-5 bg-white rounded-xl gap-4 border-2 w-full">
                   <div>
                     <Image src={p3} alt="p1" />
@@ -224,9 +224,9 @@ function page() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* mobile */}
-              <div className="grid grid-cols-2 sm:hidden bg-[#FAFAFA] p-3 w-full items-center gap-2 md:gap-7">
+              {/* <div className="grid grid-cols-2 sm:hidden bg-[#FAFAFA] p-3 w-full items-center gap-2 md:gap-7">
                 <div className="flex flex-col bg-white p-3 rounded-xl gap-2 border-2 w-full">
                   <div>
                     <Image src={p3} alt="p1" />
@@ -279,7 +279,7 @@ function page() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-[#FAFAFA] p-3">
                 <div className="flex w-full bg-white py-4 vs:max-sm:hidden px-1 rounded-xl justify-between">
@@ -340,7 +340,7 @@ function page() {
                           ))}
                         </div>
                       ) : (
-                        <div>No products in this collection.</div>
+                        <div className="flex justify-center items-center mb-5">No product in this collection.</div>
                       )}
                     </div>
                   </div>

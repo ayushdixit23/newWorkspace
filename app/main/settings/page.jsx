@@ -134,7 +134,7 @@ const page = () => {
                   </div>
                   <div>Profile Info</div>
                 </div>
-                <div className="flex justify-center gap-2 items-center p-3 px-7 rounded-lg ">
+                {/* <div className="flex justify-center gap-2 items-center p-3 px-7 rounded-lg ">
                   <div>
                     <FaBell />
                   </div>
@@ -145,7 +145,7 @@ const page = () => {
                     <FaUnlockAlt />
                   </div>
                   <div>Security</div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="grid grid-cols-5 my-3 gap-7 md:gap-16 w-full">

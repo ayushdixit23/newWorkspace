@@ -21,7 +21,7 @@ import { useGetAnalyticsQuery } from "@/app/redux/apiroutes/community";
 import { useGetFetchOrderQuery } from "@/app/redux/apiroutes/userLoginAndSetting";
 
 function Dashboard() {
-  const [change, setChange] = useState("store");
+  const [change, setChange] = useState("community");
   const [open, setOpen] = useState(false);
   const [comchange, setComchange] = useState("0");
   const [prochange, setProchange] = useState("1");
@@ -76,17 +76,17 @@ function Dashboard() {
       {/* <Toaster /> */}
       <div className="grid grid-cols-1 py-3 w-full">
         <div className="grid sm:grid-cols-5 grid-cols-1 gap-3 bg-[#FAFAFA] h-[100vh]">
-          <div className="col-span-3 px-3 flex flex-col w-full h-fit ">
+          <div className="col-span-5 px-3 flex flex-col w-full h-fit ">
             <div className="flex p-2 text-sm mb-1 items-center gap-3">
               <div
                 onClick={() => setChange("community")}
-                className="bg-[#F4F4F4] p-[6px] rounded-xl px-4"
+                className={`${change === "community" ? "bg-white" : "bg-[#F4F4F4]"}  p-[6px] rounded-xl px-4`}
               >
                 Community
               </div>
               <div
                 onClick={() => setChange("store")}
-                className="bg-[#F4F4F4] p-[6px] rounded-xl px-4"
+                className={`${change === "store" ? "bg-white" : "bg-[#F4F4F4]"}  p-[6px] rounded-xl px-4`}
               >
                 Store
               </div>
@@ -133,7 +133,7 @@ function Dashboard() {
             )}
             {change == "store" && <Storedata sales={analyticsdata?.sales} getorderdata={getorderdata} />}
           </div>
-          <div className="col-span-2 mt-2 w-full h-fit sm:rounded-xl sm:bg-white p-3 ">
+          {/* <div className="col-span-2 mt-2 w-full h-fit sm:rounded-xl sm:bg-white p-3 ">
             <div className={`${change == "community" ? null : "hidden"}`}>
               <Popularity state={state} />
               <div className="flex justify-evenly sm:justify-between bg-white py-2 rounded-xl my-2 px-3 flex-wrap items-center gap-2">
@@ -261,7 +261,7 @@ function Dashboard() {
                 {prochange == 3 && <LocationStore />}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

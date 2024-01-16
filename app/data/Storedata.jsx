@@ -7,29 +7,21 @@ import { ChartsXAxis, ChartsYAxis, LineChart, LinePlot, ResponsiveChartContainer
 
 const Storedata = ({ getorderdata, sales }) => {
 
-  // const salesData = sales.map((d) => {
-  //   console.log(formatISOStringToDMY(d.X))
-  //   return {
-  //     Y: Number(d.Y),
-  //     X: formatISOStringToDMY(d.X)
-  //   }
-  // })
+  const salesData = sales && sales.map((d) => {
+    console.log(formatISOStringToDMY(d.X))
+    return {
+      Y: Number(d.Y),
+      X: formatISOStringToDMY(d.X)
+    }
+  })
 
-  const salesData = [
-    { X: "2022-01-01", Y: 10 },
-    { X: "2022-01-02", Y: 20 },
-    { X: "2022-01-03", Y: 30 },
-    { X: "2022-01-04", Y: 20 },
-    { X: "2022-01-05", Y: 60 },
-
-  ];
   return (
     <div className={`flex flex-col gap-4`}>
       <div className="bg-white rounded-xl p-2 px-3">
         <div className="text-[#030229] font-medium pt-3 px-2">
           Store Analytics
         </div>
-        <div className="flex items-center px-3 py-2 gap-4 w-full">
+        {/* <div className="flex items-center px-3 py-2 gap-4 w-full">
           <div className="flex justify-center items-center gap-2">
             <input type="radio" name="radio" id="1" />
             <div>Last 6 days</div>
@@ -38,9 +30,8 @@ const Storedata = ({ getorderdata, sales }) => {
             <input type="radio" name="radio" id="2" />
             <div>Last Week</div>
           </div>
-        </div>
+        </div> */}
         <div className="w-full">
-
           <ResponsiveChartContainer
             dataset={salesData}
             series={[

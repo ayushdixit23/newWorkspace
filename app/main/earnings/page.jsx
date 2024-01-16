@@ -102,7 +102,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex text-sm flex-col gap-3">
+                  {/* <div className="flex text-sm flex-col gap-3">
                     <div className="px-2 flex flex-col gap-1">
                       <div className="flex justify-between items-center">
                         <div className=" text-[#615E83]">Members</div>
@@ -127,7 +127,7 @@ const page = () => {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex flex-col gap-3 bg-white shadow-lg py-4 px-3 rounded-xl sm:max-w-[450px]">
                   <div className="flex gap-2 items-center">
@@ -143,7 +143,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex text-sm flex-col gap-3">
+                  {/* <div className="flex text-sm flex-col gap-3">
                     <div className="px-2 flex flex-col gap-1">
                       <div className="flex justify-between items-center">
                         <div className=" text-[#615E83]">Members</div>
@@ -168,7 +168,7 @@ const page = () => {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex flex-col gap-3 bg-white shadow-lg py-4 px-3 rounded-xl sm:max-w-[450px]">
                   <div className="flex gap-2 items-center">
@@ -184,7 +184,7 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex text-sm flex-col gap-3">
+                  {/* <div className="flex text-sm flex-col gap-3">
                     <div className="px-2 flex flex-col gap-1">
                       <div className="flex justify-between items-center">
                         <div className=" text-[#615E83]">Members</div>
@@ -209,7 +209,7 @@ const page = () => {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div></div>

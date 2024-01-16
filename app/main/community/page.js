@@ -77,7 +77,7 @@ function page() {
               Create community
             </Link>
           </div>
-          <div className="sm:px-12 pt-5 bg-[#fafafa]">
+          <div className="sm:px-5 pt-3 bg-white">
             <div className="flex w-full bg-white py-5 rounded-2xl px-4 justify-between vs:max-sm:hidden mt-8">
               <div className="w-64 sm:max-md:w-52 font-semibold flex pl-10">
                 Communities
@@ -103,9 +103,8 @@ function page() {
               {comdata?.merged?.map((d, i, arr) => (
                 <div
                   key={i}
-                  className={`${i === 0 ? "rounded-t-xl" : ""} ${
-                    i === arr?.length - 1 ? "rounded-b-xl" : "border-b"
-                  }`}
+                  className={`${i === 0 ? "rounded-t-xl" : ""} ${i === arr?.length - 1 ? "rounded-b-xl" : "border-b"
+                    }`}
                 >
                   <Communitybox
                     data={d}

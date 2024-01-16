@@ -1,12 +1,19 @@
 import Image from "next/image";
 import React from "react";
 import Empty from "../assets/image/iconContainer.png";
-import { BiUpArrowAlt } from "react-icons/bi";
 import { FaAngleDown } from "react-icons/fa";
 import { BarPlot, ChartsXAxis, ResponsiveChartContainer } from "@mui/x-charts";
 import Postdata from "./Postdata";
+import { formatISOStringToDMY } from "../utils/Useful";
 
 const Communitydata = ({ state, analyticsdata, setState, open, setOpen }) => {
+
+  const communityData = state.stats && state?.stats?.map((d) => ({
+    Y1: Number(d.Y1),
+    X: formatISOStringToDMY(d.X),
+    Y2: Number(d.Y2)
+
+  }))
   return (
     <div>
       <div className="rounded-xl bg-white">
@@ -78,15 +85,15 @@ const Communitydata = ({ state, analyticsdata, setState, open, setOpen }) => {
           <div className="flex order-1 sm:hidden justify-center items-center gap-1">
             {state.name ? state.name : "Community"}
           </div>
-          <div className="flex pn:max-sm:hidden justify-center items-center gap-1">
+          {/* <div className="flex pn:max-sm:hidden justify-center items-center gap-1">
             <div className="text-xl">
               <BiUpArrowAlt />
             </div>
             <div className="text-sm">2.1% vs last week</div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="flex items-center px-3 py-2 gap-4 w-full">
+        {/* <div className="flex items-center px-3 py-2 gap-4 w-full">
           <div className="flex justify-center items-center gap-2">
             <input type="radio" name="radio" id="1" />
             <div>Last 6 days</div>
@@ -95,46 +102,14 @@ const Communitydata = ({ state, analyticsdata, setState, open, setOpen }) => {
             <input type="radio" name="radio" id="2" />
             <div>Last Week</div>
           </div>
-        </div>
+        </div> */}
 
         <div className="w-full h-full">
-          {/* {state?.stats?.length > 0 && (
-            <ResponsiveChartContainer
-              series={[
-                {
-                  type: "bar",
-                  data: state?.stats?.[0]?.Y1,
-                },
-                {
-                  type: "bar",
-                  data: state?.stats?.[0]?.Y2,
-                },
-              ]}
-              xAxis={[
-                {
-                  data: state?.stats?.[0]?.X,
-                  scaleType: "band",
-                  id: "x-axis-id",
-                  categoryGapRatio: 0.4,
-                },
-              ]}
-              height={200}
-              className="z-10 w-full"
-            >
-              <BarPlot layout="horizontal" />
-              <ChartsXAxis
-                label="X axis"
-                position="bottom"
-                axisId="x-axis-id"
-              />
-            </ResponsiveChartContainer>
-          )} */}
-          {console.log(state?.stats)}
-          {state?.stats?.length > 0 &&
 
 
+          {communityData && communityData?.length > 0 &&
             <ResponsiveChartContainer
-              dataset={state?.stats}
+              dataset={communityData}
               series={[
                 {
                   type: "bar",
@@ -163,10 +138,7 @@ const Communitydata = ({ state, analyticsdata, setState, open, setOpen }) => {
                 axisId="x-axis-id"
               />
             </ResponsiveChartContainer>
-
-
           }
-
         </div>
       </div>
 

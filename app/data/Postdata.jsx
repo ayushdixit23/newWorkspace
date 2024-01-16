@@ -52,7 +52,7 @@ const Postdata = ({ analyticsdata, state }) => {
                       <div className="pn:max-pp:text-sm">Shares</div>
                     </div>
                     <div>
-                      <div>+5</div>
+                      <div>0</div>
                       <div className="hidden">-5</div>
                     </div>
                   </div>
@@ -216,7 +216,8 @@ const Postdata = ({ analyticsdata, state }) => {
                         {d?.sharescount}
                       </td>
                       <td className="text-sm leading-5 py-2 px-3 text-center">
-                        {Math.round(parseInt(d?.engrate))}
+                        {/* {Math.round(parseInt(d?.engrate))} */}
+                        0
                       </td>
                     </tr>
                   ))}
