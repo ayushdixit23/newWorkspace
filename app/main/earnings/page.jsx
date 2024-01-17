@@ -4,7 +4,7 @@ import { MdOutlineNotifications } from "react-icons/md";
 import e1 from "../../assets/image/e1.png";
 import e2 from "../../assets/image/e2.png";
 import Cl from "../../assets/image/Cl.png";
-import vector from "../../assets/image/vector.png";
+import { BsBank } from "react-icons/bs";
 import ads from "../../assets/image/ads.png";
 import order from "../../assets/image/order.png";
 import rupee from "../../assets/image/rupee.png";
@@ -69,11 +69,7 @@ const page = () => {
               <div className="flex pn:max-sm:col-span-2 bg-white justify-between items-center p-4 sm:p-3 px-5 rounded-xl gap-3 w-full">
                 <div className="flex justify-center gap-4 items-center">
                   <div>
-                    <Image
-                      src={vector}
-                      className="min-w-[20px] min-h-[20px]"
-                      alt="image"
-                    />
+                    <BsBank className="text-xl" />
                   </div>
                   <div className="sm:text-sm font-semibold">Add Bank</div>
                 </div>
