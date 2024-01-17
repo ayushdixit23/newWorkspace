@@ -1,4 +1,3 @@
-"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Providers from "./redux/Providers";
@@ -15,10 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`select-none ${inter.className}`}>
-        {/* <Providers>
-          <Loading children={children} />
-        </Providers> */}
+      <body className={`select-none ${inter.className}`}> 
         <Providers>
           <TokenDataWrapper>{children}</TokenDataWrapper>
         </Providers>
